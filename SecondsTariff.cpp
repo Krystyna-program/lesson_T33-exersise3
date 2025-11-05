@@ -9,11 +9,16 @@ SecondsTariff::SecondsTariff()
 
 SecondsTariff::SecondsTariff(std::string name, float price) :Tariff(name)
 {
-    this->price = price;
+    setPrice(price);
+    //this->price = price;
 }
 
 void SecondsTariff::setPrice(float price)
 {
+    if (price < 0)
+    {
+        throw new PriceException("Not positive number", price);
+    }
     this->price = price;
 }
 
@@ -27,6 +32,10 @@ float SecondsTariff::calcCost(int seconds) const
     if (seconds <= 0)
     {
         throw new SecondException("Not positive number", seconds);
+    }
+    if (price < 0)
+    {
+        throw new PriceException("Not positive number", price);
     }
     return price * seconds;
 }
