@@ -26,7 +26,7 @@ float SecondsTariff::calcCost(int seconds) const
 {
     if (seconds <= 0)
     {
-
+        throw new SecondException("Not positive number", seconds);
     }
     return price * seconds;
 }

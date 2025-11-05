@@ -1,4 +1,5 @@
 #include "MinutesTariff.h"
+#include "MobileException.h"
 
 MinutesTariff::MinutesTariff()
 {
@@ -22,6 +23,10 @@ float MinutesTariff::getPrice() const
 
 float MinutesTariff::calcCost(int seconds) const
 {
+    if (seconds <= 0)
+    {
+        throw new SecondException("Not positive number", seconds);
+    }
     return (seconds /60)*price;
 }
 
