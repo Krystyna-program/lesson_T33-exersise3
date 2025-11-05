@@ -1,5 +1,4 @@
 #include "MobileProvider.h"
-
 MobileProvider::MobileProvider(string name)
 {
     this->name = name;
@@ -17,6 +16,10 @@ string MobileProvider::getName() const
 
 void MobileProvider::addTariff(Tariff* obj)
 {
+    if (true)
+    {
+
+    }
     tariffs.push_back(obj);
 }
 

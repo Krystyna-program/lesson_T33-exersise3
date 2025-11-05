@@ -53,3 +53,13 @@ public:
 		return "PriceException: " + text + "! price:" + std::to_string(price) + "!!!";
 	}
 };
+
+class ObjException :public MobileException {
+public:
+	ObjException(string text) 
+	:MobileException(text) {
+	}
+	string showMessage()const override {
+		return "ObjException: " + text + "!";
+	}
+};
