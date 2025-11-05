@@ -18,7 +18,7 @@ void Tariff::setName(std::string name)
     {
         throw new NameException("Name is empty", "Empty");
     }
-    if (name.find("XXX") >= 0)
+    if (name.find("XXX") != -1)
     {
         throw new NameException("Name is bad", name);
     }
